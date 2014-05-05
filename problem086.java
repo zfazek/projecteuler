@@ -46,7 +46,7 @@ public class problem086 {
 			  res, hour, minute, second);
     }
 
-    static int init(int limit) {
+    static void init(int limit) {
 	p = new ArrayList<Triangle>();
 	p1 = new HashSet<Triangle>();
 	p2 = new HashSet<Triangle>();
@@ -112,9 +112,9 @@ public class problem086 {
 	int x, y;
 	Triangle t1;
 	Triangle t2;
-	for (a = 1; a < limit + 1; ++a)
-	    for (b = a; b < limit + 1; ++b)
-		for (c = b; c < limit + 1; ++c) {
+	for (int a = 1; a < limit + 1; ++a)
+	    for (int b = a; b < limit + 1; ++b)
+		for (int c = b; c < limit + 1; ++c) {
 		    x = (a + b) * (a + b);
 		    y = c * c;
 		    t1 = new Triangle();
