@@ -4,7 +4,7 @@ import java.util.*;
 public class problem243 {
 
     static ArrayList<Integer> primes;
-    static HashSet primset;
+    static HashSet<Integer> primset;
 
     static boolean isPrime(int n) {
 	for (int i = 2; i < (int)Math.sqrt(n) + 1; ++i) {
@@ -70,8 +70,10 @@ public class problem243 {
 		minNumber = i;
 	    }
 	    if (i % 1_000_000 == 0)
-		System.out.printf("n:%10d min number: %10d min value:%10.6f target:%10.6f\n", i, minNumber, minValue, lim);
+		System.out.printf("n:%10d min number: %10d min value:%10.6f target:%10.6f\n",
+				  i, minNumber, minValue, lim);
 	} while (res >= lim);
-	System.out.printf("n:%10d min number: %d min value:%10.6f target:%10.6f\n", i, minNumber, minValue, lim);
+	System.out.printf("n:%10d min number: %d min value:%10.6f target:%10.6f\n",
+			  i, minNumber, minValue, lim);
     }
 }
