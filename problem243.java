@@ -61,8 +61,8 @@ public class problem243 {
 	    if (isPrime(i)) {
 		primes.add(i);
 		primset.add(i);
+		continue;
 	    }
-	    if (primset.contains(i)) continue;
 	    r = phiEuler(i, primeFactors(i));
 	    res = (float)r / (i - 1);
 	    if (res < minValue) {
