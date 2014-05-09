@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class problem243 {
 
     static ArrayList<Integer> primes;
@@ -45,14 +44,37 @@ public class problem243 {
     }
     
     public static void main(String[] argv) {
+	int limit = 100_000;
+	int sejtes = 223092870; // sqrt: 14936 phi: 36495360
 	primes = new ArrayList<Integer>();
 	primset = new HashSet<Integer>();
 
+	for (int i = 2; i < limit; ++i) {
+	    if (isPrime(i)) {
+		primes.add(i);
+		primset.add(i);
+		if (i < 100) System.out.println(i);
+	    }
+	}
+	System.out.printf("Number of primes below %d : %d\n", limit, primes.size());
+	System.out.printf("%d %s %d %f\n",
+			  sejtes,
+			  primeFactors(sejtes),
+			  phiEuler(sejtes, primeFactors(sejtes)),
+			  (double)(phiEuler(sejtes, primeFactors(sejtes))/(sejtes-1))); //???
+	//System.out.printf("primeFactors(%d) = %s\n", 94745, primeFactors(94745));
+	int ss = 1;
+	for (int p : primeFactors(sejtes))
+	    ss *= p;
+	//System.out.printf("%d\n", (long)(ss * 23 * 29));
+	//System.out.printf("%d phi:%d\n", 94746, phiEuler(94746, primeFactors(94746)));
+
+	/*
 	int r = 0;
 	float minValue = 1f;
 	int minNumber = 0;
-	int i = 100_000_000;
-	i = 1;
+	int i = 1;
+	i = sejtes - 100;
 	float lim = 0.4f;
 	lim = 15499f / 94744;
 	float res = 1f;
@@ -69,11 +91,12 @@ public class problem243 {
 		minValue = res;
 		minNumber = i;
 	    }
-	    if (i % 1_000_000 == 0)
-		System.out.printf("n:%10d min number: %10d min value:%10.6f target:%10.6f\n",
-				  i, minNumber, minValue, lim);
-	} while (res >= lim);
-	System.out.printf("n:%10d min number: %d min value:%10.6f target:%10.6f\n",
+	    if (i % 1 == 0)
+		System.out.printf("n:%10d min number: %10d phi: %10d min value:%12.10f target:%12.10f\n",
+				  i, minNumber, r, minValue, lim);
+	} while (res >= lim && i < sejtes);
+	System.out.printf("n:%10d min number: %d min value:%12.10f target:%12.10f\n",
 			  i, minNumber, minValue, lim);
+	*/
     }
 }
