@@ -11,9 +11,9 @@ def iter(x, n):
 
 max = 0
 limit = 10**6
-for i in xrange(1, limit):
+for i in range(1, limit):
     m = iter(i, 0)
     hash[i] = m
     if m > max:
-        print i, m
+        print(i, m)
         max = m 
