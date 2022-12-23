@@ -1,11 +1,11 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
 
 using namespace std;
 
 inline bool prim(int x) {
-    int limit = static_cast<int>(sqrt(x) + 1);
     if (x < 2) return false;
+    int limit = static_cast<int>(sqrt(x) + 1);
     for (int i = 2; i < limit; i++) {
 	if (x % i == 0) return false;
     }

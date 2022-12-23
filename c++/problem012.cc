@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -29,7 +29,7 @@ int main() {
         d = iter(s);
         if (d > max) {
             cout << n << " " << s << " " << d << endl;
-            max =d;
+            max = d;
         }
         n++;
     }

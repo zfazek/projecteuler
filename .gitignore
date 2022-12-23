@@ -1,4 +1,7 @@
+a.out
+rust
 *.class
 *~
 *.hi
 *.o
+__pycache__/
