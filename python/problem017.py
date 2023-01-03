@@ -33,11 +33,11 @@ def length(s):
 
 def digits(x):
     r = []
-    r.append(x / 1000)
+    r.append(x // 1000)
     x = x % 1000
-    r.append(x / 100)
+    r.append(x // 100)
     x = x % 100
-    r.append(x / 10)
+    r.append(x // 10)
     x = x % 10
     r.append(x)
     return r
@@ -47,5 +47,5 @@ for i in range(1,1001):
     ss = chars(digits(i))
     nn = length(ss)
     n += nn
-    print ss, nn, n
-print n
+    print(ss, nn, n)
+print(n)
